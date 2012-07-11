@@ -1,5 +1,3 @@
-// JavaScript Document
-
 (function( $ ) {
 	
 	var pattern 	= new RegExp();
@@ -7,8 +5,7 @@
 	var new_array = new Array();
 	var words;
 	
-	var methods = {
-		
+	var methods = {		
 		//Intended for the textarea containing the words to search for
 		//Initializes the regex.
 		addWords : function() {
@@ -25,10 +22,7 @@
 			
 			//Update the list display
 			methods.updateList();
-		},
-		
-		
-		
+		},		
 		//Parses the array for elements and displays them in the "searching for" list	
 		updateList : function () {			
 			var list = $(".selector_result ul");
@@ -54,7 +48,6 @@
 			
 			words = word_array.join("|");			
 		},		
-		
 		clearWords : function() {	
 			word_array.length = 0;
 			new_array.length = 0;
@@ -62,9 +55,7 @@
 			var list = $(".selector_result ul");			
 			list.empty();
 			list.append('<li class="empty">Nothing yet!</li>');			
-		},
-		
-				
+		},				
 		//This is called automatically when using findWord() with no arguments. 
 		//This will be called on the input wysiwyg in order to run the text through the regex and highlight everything	
 		process : function () {
@@ -78,8 +69,7 @@
 			}
 			$("#destination").val(result).wysiwyg();
 			$(".loading").remove();
-		},
-		
+		},		
 	};
 	
 	$.fn.findWord = function( method ) {    
